@@ -6,8 +6,8 @@ Used fonts: Cormorant Semibold for headings and other elements, Inter for folder
 
 Light mode:
 
-![[images/neutralacademia-light.jpg]]
+![](images/neutralacademia-light.jpg)
 
 Dark mode:
 
-![[images/neutralacademia-dark.jpg]]
+![](images/neutralacademia-dark.jpg)
