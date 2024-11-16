@@ -1,9 +1,6 @@
 name: Release Obsidian theme
 
-on:
-  push:
-    tags:
-      - "*"
+on: workflow_dispatch
 
 jobs:
   build:
