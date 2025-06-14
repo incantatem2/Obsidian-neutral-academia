@@ -48,7 +48,7 @@ svg * {
 }
 
 .callout {
-  border-left: 1px dotted #666C68;
+  border: 1px dotted #666c6850;
   background-color: transparent;
 
 }
@@ -84,84 +84,98 @@ div.view-header-title {
 
 .theme-dark {
 
-  --color-base-00: #0f0a0b;
-  --color-base-05: #262020;
-  --color-base-10: #110b0c;
-  --color-base-20: #110b0c;
-  --color-base-25: #262020;
-  --color-base-30: #262020;
-  --color-base-35: #666C68;
-  --color-base-40: #C8BCAC;
-  --color-base-50: #C8BCAC;
-  --color-base-60: #C8BCAC;
-  --color-base-70: #C8BCAC;
-  --color-base-100: #C8BCAC;
+   --color-base-00: #0f0a0b; 
+    --color-base-05: #262020;    
+    --color-base-10: #110b0c; 
+    --color-base-20: #110b0c; 
+    --color-base-25: #262020;     
+    --color-base-30: #262020; 
+    --color-base-35: #666C68;
+    --color-base-40: #C8BCAC; 
+    --color-base-50: #C8BCAC;
+    --color-base-60: #C8BCAC;
+    --color-base-70: #C8BCAC;
+    --color-base-100: #C8BCAC;
 
-  --interactive-normal: #393e50;
-  --slider-track-background: #393e50;
-  --icon-color: #E5DFD3;
-  --icon-color-hover: #4f4d4a;
-  --icon-color-focused: #4f4d4a;
+    --tab-divider-color: transparent !important;
 
-  --code-background: none;
+    --interactive-normal: #393e50;
+    --slider-track-background: #393e50;
+    --icon-color: #E5DFD3;
+    --icon-color-hover: #4f4d4a;
+    --icon-color-focused: #4f4d4a;
 
-  --nav-item-color: #4f4d4a;
-  --nav-item-color-active: #666C68;
-  --nav-item-color-hover: #666C68;
+    --code-background: none;
 
-  --nav-item-background-active: none;
-  --nav-item-background-hover: none;
+    --nav-item-color: #4f4d4a;
+    --nav-item-color-active: #666C68;
+    --nav-item-color-hover: #666C68;
 
-  --tag-background: transparent;
-  --tag-background-hover: #393e50;
+    --nav-item-background-active: none;
+    --nav-item-background-hover: none;
+
+    --tag-background:transparent;
+    --tag-background-hover:#393e50;
+    
+
+
+
+--text-accent: #C8BCAC;
+--text-accent-hover: #7F6C5E;
 
 
   --font-text: 'manrope', sans-serif !important;
   --font-text-size: 14px !important;
 
-  --text-accent: #C8BCAC;
 
 }
 
 
 .theme-light {
 
-  --color-base-00: #f5f4f4;
-  --color-base-05: #d2c9bd;
-  --color-base-10: #efeff1;
-  --color-base-20: #efeff1;
-  --color-base-25: #d2c9bd;
-  --color-base-30: #d2c9bd;
-  --color-base-35: #202430;
-  --color-base-40: #202430;
-  --color-base-50: #4E4D49;
-  --color-base-60: #4B1B29;
-  --color-base-70: #434B56;
-  --color-base-100: #202430;
+    --color-base-00: #f5f4f4;
+    --color-base-05: #d2c9bd;    
+    --color-base-10: #efeff1; 
+    --color-base-20: #efeff1; 
+    --color-base-25: #d2c9bd;     
+    --color-base-30: #d2c9bd; 
+    --color-base-35: #202430;
+    --color-base-40: #202430; 
+    --color-base-50: #4E4D49; 
+    --color-base-60: #4B1B29;
+    --color-base-70: #434B56; 
+    --color-base-100: #202430; 
 
-  --interactive-normal: #393e50;
-  --slider-track-background: #393e50;
-  --icon-color: #322831;
-  --icon-color-hover: #41250C;
-  --icon-color-focused: #6B9080;
+    --tab-divider-color: transparent !important;
 
-  --code-background: none;
+    --interactive-normal: #a4a9ba;
+    --slider-track-background: #393e50;
+    --icon-color: #322831;
+    --icon-color-hover: #41250C;
+    --icon-color-focused: #6B9080;
 
-  --nav-item-color: #202430;
-  --nav-item-color-active: #7F6C5E;
-  --nav-item-color-hover: #666C68;
+    --code-background: none;
 
-  --nav-item-background-active: none;
-  --nav-item-background-hover: none;
+    --nav-item-color: #202430;
+    --nav-item-color-active: #7F6C5E;
+    --nav-item-color-hover: #666C68;
 
-  --tag-background: transparent;
-  --tag-background-hover: #d2c9bd;
+    --nav-item-background-active: none;
+    --nav-item-background-hover: none;
+
+    --tag-background:transparent;
+    --tag-background-hover:#d2c9bd;
+
+  
+    
+--text-accent: #4B1B29;
+--text-accent-hover: #7F6C5E;
 
 
   --font-text: 'manrope', sans-serif !important;
   --font-text-size: 14px !important;
 
-  --text-accent: #4B1B29;
+
 
 }
 
