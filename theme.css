@@ -37,19 +37,31 @@ svg * {
 
 
 
-/* .nav-file-title,
-.nav-folder-title {
-  font-family: 'cormorant semibold', serif;
-} */
+
 
 
 .callout>.callout-content p:last-child {
   margin-bottom: 0;
 }
 
+.theme-dark {
+
 .callout {
   border: 1px dotted #666c6850;
-  background-color: transparent;
+  background-color: #110b0c;
+
+}
+
+}
+
+
+.theme-light {
+
+  .callout {
+  border: 1px dotted #666c6850;
+  background-color: #f3f2f2;
+
+}
 
 }
 
