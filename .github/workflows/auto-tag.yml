@@ -1,7 +1,8 @@
 name: Auto release
 # When theme.css or manifest.json changes on main, release the version in
-# manifest.json. To ship an update, change the CSS and raise "version" in
-# manifest.json (for example 1.0.3 to 1.0.4) in the same commit.
+# manifest.json. If that version was already released, this raises the patch
+# number (1.0.3 to 1.0.4) for you. To pick a bigger jump, such as 1.1.0 or
+# 2.0.0, set "version" in manifest.json yourself in the same commit.
 on:
   push:
     branches: [main, master]
@@ -17,14 +18,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Tag the manifest version and start the release
+      - name: Pick the version, tag it, and start the release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           version=$(jq -r .version manifest.json)
           if git ls-remote --exit-code --tags origin "refs/tags/${version}" >/dev/null; then
-            echo "::warning::Tag ${version} already exists, so no release was made. Raise \"version\" in manifest.json to publish this change."
-            exit 0
+            if [ "${GITHUB_EVENT_NAME}" != "push" ]; then
+              echo "::warning::Tag ${version} already exists, so no release was made."
+              exit 0
+            fi
+            IFS=. read -r major minor patch <<< "${version}"
+            version="${major}.${minor}.$((patch + 1))"
+            jq --tab --arg v "${version}" '.version = $v' manifest.json > manifest.tmp
+            mv manifest.tmp manifest.json
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -am "Bump version to ${version}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
           git tag "${version}"
           git push origin "${version}"
