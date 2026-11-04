@@ -1,0 +1,31 @@
+name: Auto release
+# When theme.css or manifest.json changes on main, release the version in
+# manifest.json. To ship an update, change the CSS and raise "version" in
+# manifest.json (for example 1.0.3 to 1.0.4) in the same commit.
+on:
+  push:
+    branches: [main, master]
+    paths: [theme.css, manifest.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Tag the manifest version and start the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version=$(jq -r .version manifest.json)
+          if git ls-remote --exit-code --tags origin "refs/tags/${version}" >/dev/null; then
+            echo "::warning::Tag ${version} already exists, so no release was made. Raise \"version\" in manifest.json to publish this change."
+            exit 0
+          fi
+          git tag "${version}"
+          git push origin "${version}"
+          gh workflow run release.yml --ref "${version}"
