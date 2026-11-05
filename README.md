@@ -1,16 +1,10 @@
 
-# Neutral Academia
 
-A minimalist and elegant theme fitting dark and light academia aesthetic. 
 
-Used fonts: Cormorant Semibold for headings and other elements, Inter for folders, Manrope for note text.
+## Installation
 
-Note: The screenshots are slightly outdated because I did some small edits to this theme. Colors and fonts are still the same.
+1. Open Obsidian and go to **Settings > Appearance**.
+2. Next to **Themes**, select **Manage**.
+3. Search for "Neutral Academia", then select **Install and use**.
 
-Light mode:
-
-![](images/neutralacademia-light.jpg)
-
-Dark mode:
-
-![](images/neutralacademia-dark.jpg)
+To install by hand, download `manifest.json` and `theme.css` from the [latest release](https://github.com/incantatem2/Obsidian-neutral-academia/releases/latest). Put both files in a folder named `Neutral Academia` inside `.obsidian/themes/` in your vault. Then choose the theme under **Settings > Appearance > Themes**.
